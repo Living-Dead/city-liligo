@@ -1,3 +1,17 @@
+<div class="block">
+  <label class="label" [textContent]="this.text.label"></label>
+  <input class="input" (keyup)="onKey($event)" [value]="searchValue">
+</div>
 <p>
-  typehead works!
-</p>
+<div class="block">
+  <div class="button"
+  	(click)="goToGoogle(this.selectCity)"
+  	[textContent]="this.text.button"></div>
+</div>
+<div *ngFor="let item of this.cityList.city" class="suggestion">
+  <li class="dropdown-item" 
+  	*ngIf="item"
+  	[ngClass]="{ 'active': item === this.selectCity }"
+  	(click)="selectFromSuggestions(item)">{{item}}
+  </li>
+</div>

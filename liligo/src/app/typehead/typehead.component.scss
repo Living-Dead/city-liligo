@@ -1,0 +1,45 @@
+.block {
+  display: table;
+  margin: 0 auto;
+  padding-top: 20px;
+
+  .button {
+    background: #ff6400;
+    -webkit-border-radius: 3px;
+    background-clip: padding-box;
+    font-size: 1.4rem;
+    height: 90px;
+    line-height: 25px;
+    width: 250px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 20px;
+  }
+
+  .input {
+    width: 250px;
+    box-sizing: border-box;
+  }
+
+  .label {
+    display: block;
+    text-align: left;
+    margin: 0;
+  }
+}
+
+.suggestion {
+  display: table;
+  margin: 0 auto;
+  padding-top: 10px;
+
+  li:hover {
+    background: blue;
+  }
+}
+
+.active {
+  background: blue;
+}

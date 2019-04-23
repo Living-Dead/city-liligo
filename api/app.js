@@ -42,16 +42,16 @@ app.post('/citysearch', function(req, res) {
     selectFromCityList.forEach(function(cityName) {
         if (cityName === city.service.ucFirst(req.body.city) && cityName.length === req.body.city.length) {
             selectFromCityList.unshift(cityName);
-
         }
     });
+
     /* unique city name | if the city name is already exist in list */
     uniqueCityName = selectFromCityList.filter(function(item, index) {
         return selectFromCityList.indexOf(item) >= index;
     });
 
     /* limit loop */
-    for (let i = city.start; i <= city.limit; i++) {
+    for (let i = city.start; i < city.limit; i++) {
         uniqueLimitCityName.push(uniqueCityName[i]);
     }
 

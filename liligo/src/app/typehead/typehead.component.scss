@@ -16,11 +16,20 @@
     color: white;
     font-weight: bold;
     padding-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
   }
 
   .input {
     width: 250px;
     box-sizing: border-box;
+    height: 30px;
+    border: 2px solid darkgray;
+    border-radius: 5px;
+
+    &:active {
+      border: 3px solid #15264B;
+    }
   }
 
   .label {
@@ -37,6 +46,8 @@
 
   li:hover {
     background: blue;
+    color: white;
+    cursor: pointer;
   }
 }
 

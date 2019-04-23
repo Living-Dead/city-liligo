@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TypeheadComponent } from './typehead/typehead.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './services/api.service';
 
 @NgModule({
@@ -14,7 +14,8 @@ import { ApiService } from './services/api.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [
     ApiService,

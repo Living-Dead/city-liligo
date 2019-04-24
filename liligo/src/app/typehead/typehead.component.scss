@@ -51,6 +51,19 @@
   }
 }
 
+.remove {
+  display: table-cell;
+  padding-left: 10px;
+}
+
 .active {
   background: blue;
 }
+
+[class^="ico-"], [class*=" ico-"]{
+  font: normal 1em/1 Arial, sans-serif;
+  float: left;
+}
+
+.ico-times:before{ content: "\2716"; }
+.ico-check:before{ content: "\2714"; }

@@ -15,4 +15,9 @@
   	[ngClass]="{ 'active': item === this.selectCity }"
   	(click)="selectFromSuggestions(item)">{{item}}
   </li>
+  <div class="remove" *ngIf="item === this.selectCity">
+    <span (click)="removeChecked()">
+    	<i class="ico-times"></i>
+    </span>
+  </div>
 </div>

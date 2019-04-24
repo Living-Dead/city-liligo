@@ -33,7 +33,7 @@ app.post('/citysearch', function(req, res) {
 	/* empty new api call */
     const uniqueLimitCityName = [];
     let uniqueCityName = [];
-    let selectFromCityList = []
+    let selectFromCityList = [];
 
     /* ucFirst city name search in the list */
     selectFromCityList =
@@ -42,9 +42,9 @@ app.post('/citysearch', function(req, res) {
     selectFromCityList.forEach(function(cityName) {
         if (cityName === city.service.ucFirst(req.body.city) && cityName.length === req.body.city.length) {
             selectFromCityList.unshift(cityName);
+
         }
     });
-
     /* unique city name | if the city name is already exist in list */
     uniqueCityName = selectFromCityList.filter(function(item, index) {
         return selectFromCityList.indexOf(item) >= index;

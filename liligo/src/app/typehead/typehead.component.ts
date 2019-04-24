@@ -14,6 +14,7 @@ export class TypeheadComponent {
 	private cityList: any;
 	private selectCity: string;
 	private text: object;
+	private saveList: any;
 
 	constructor(
 		private apiService: ApiService,
@@ -24,13 +25,14 @@ export class TypeheadComponent {
 			label: 'City name',
 			button: 'Search city on the GOOGLE',
 		}
+		this.saveList = [];
 	}
 
 	onKey(event: any) {
 		this.selectCity = '';
 		if (event.target.value.length >= 1) {
 			this.apiService
-				.city(event.target.value)
+				.city(event.target.value.toLowerCase())
 				.subscribe(cityList => {
 					this.cityList = cityList !== '' ? cityList : [];
 				})
@@ -39,7 +41,13 @@ export class TypeheadComponent {
 		}
 	}
 
+	removeChecked() {
+		this.cityList.city = this.saveList;
+		this.selectCity = '';
+	}
+
 	selectFromSuggestions(data) {
+		this.saveList = this.cityList.city;
 		this.cityList.city = [];
 		this.cityList.city.push(data);
 		this.selectCity = data;

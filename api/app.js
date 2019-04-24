@@ -37,7 +37,7 @@ app.post('/citysearch', function(req, res) {
 
     /* ucFirst city name search in the list */
     selectFromCityList =
-        city.list.filter(word => word.substring(0, req.body.city.length) === city.service.ucFirst(req.body.city));
+        city.list.filter(word => word.substring(0, req.body.city.length).toLowerCase() === req.body.city.toLowerCase());
 
     selectFromCityList.forEach(function(cityName) {
         if (cityName === city.service.ucFirst(req.body.city) && cityName.length === req.body.city.length) {

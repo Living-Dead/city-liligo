@@ -32,7 +32,7 @@ export class TypeheadComponent {
 		this.selectCity = '';
 		if (event.target.value.length >= 1) {
 			this.apiService
-				.city(event.target.value.toLowerCase())
+				.city(event.target.value)
 				.subscribe(cityList => {
 					this.cityList = cityList !== '' ? cityList : [];
 				})
